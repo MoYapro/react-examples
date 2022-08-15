@@ -38,6 +38,7 @@ const ControlPanel: FC = (): JSX.Element => {
       }, Number(notification.dissmissDelay));
     }
   }, [dispatch, notification]);
+
   return (
     <>
       <button onClick={handleShowNotification}>show notification</button>
