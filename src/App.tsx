@@ -1,12 +1,23 @@
-import { Provider } from "react-redux";
-import store from "./store";
+import { FC } from "react";
 
-function App() {
+import ControlPanel from "./components/ControlPanel";
+import Notification from "./components/Notification";
+import { useReduxHooks } from "./hooks/useReduxHooks";
+import { RootState } from "./store";
+
+const App: FC = () => {
+  const { useAppSelector } = useReduxHooks();
+
+  const notification = useAppSelector((state: RootState) => state.notification);
+
   return (
-    <Provider store={store}>
-      <div className="App"></div>
-    </Provider>
+    <div>
+      <ControlPanel />
+      {notification.show && (
+        <Notification type={notification.type} message={notification.message} />
+      )}
+    </div>
   );
-}
+};
 
 export default App;

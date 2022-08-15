@@ -1,9 +1,8 @@
 import { PayloadAction, createReducer } from "@reduxjs/toolkit";
 
-import {
-  ENotificationTypes,
-  INotificationState,
-} from "./notificationReducer.types";
+import { ENotificationTypes } from "../../../interfaces/notification.interface";
+
+import { INotificationState } from "./notificationReducer.types";
 
 const initState: INotificationState = {
   type: ENotificationTypes.success,

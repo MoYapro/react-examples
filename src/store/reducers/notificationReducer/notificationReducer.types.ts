@@ -1,13 +1,8 @@
-export enum ENotificationTypes {
-  success,
-  error,
-  info,
-  warning,
-}
+import { ENotificationTypes } from "../../../interfaces/notification.interface";
 
 export interface INotificationState {
   type: ENotificationTypes;
   message: string;
   show: boolean;
-  dissmisTimeout?: number;
+  dissmissDelay?: number;
 }
