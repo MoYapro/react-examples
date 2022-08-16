@@ -1,5 +1,5 @@
 import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 
 import { IEmployee } from "../../../interfaces/employee.interface";
 import { IApiResponse } from "../../../interfaces/apiResponse.interface";
