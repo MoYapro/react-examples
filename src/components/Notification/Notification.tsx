@@ -1,13 +1,18 @@
 import { FC } from "react";
+import { useReduxHooks } from "../../hooks/useReduxHooks";
+import { RootState } from "../../store";
 
 import { NotificationWrapper } from "./Notification.styled";
-import { INotificationProps } from "./Notification.types";
 
-const Notification: FC<INotificationProps> = ({
-  type,
-  message,
-}): JSX.Element => {
-  return <NotificationWrapper $color={type}>{message}</NotificationWrapper>;
+const Notification: FC = (): JSX.Element | null => {
+  const { useAppSelector } = useReduxHooks();
+  const notification = useAppSelector((state: RootState) => state.notification);
+
+  return notification.show ? (
+    <NotificationWrapper $color={notification.type}>
+      {notification.message}
+    </NotificationWrapper>
+  ) : null;
 };
 
 export default Notification;
