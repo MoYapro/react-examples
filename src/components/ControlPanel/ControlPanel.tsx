@@ -24,7 +24,7 @@ const ControlPanel: FC = (): JSX.Element => {
   const handleShowNotificationWithDelay = useCallback((): void => {
     dispatch(
       showNotificationAction({
-        type: ENotificationTypes.success,
+        type: ENotificationTypes.info,
         message: "Success message with 3000 ms delay",
         dissmissDelay: 3000,
       })

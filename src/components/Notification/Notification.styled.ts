@@ -13,7 +13,7 @@ export const NotificationWrapper = styled.div<{
 }>`
   position: fixed;
   top: 0;
-  height: 2.5rem;
+  height: 3rem;
   width: 100%;
   display: flex;
   justify-content: center;
